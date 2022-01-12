@@ -1,0 +1,19 @@
+# Byte-compiled
+__pycache__/
+*.py[cod]
+
+# Packaging
+*.egg-info/
+dist/
+AUTHORS
+ChangeLog
+
+# Tests
+.coverage
+.tox/
+cover/
+htmlcov/
+junit-*.xml
+
+# Virtual environments
+venv/
