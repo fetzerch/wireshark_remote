@@ -32,7 +32,9 @@ def get_sid(box_url: str, username: str, password: str) -> str:
     try:
         state = get_login_state(box_url)
     except Exception as ex:
-        raise Exception("failed to get challenge") from ex
+        raise Exception(  # pylint: disable=broad-exception-raised
+            "failed to get challenge"
+        ) from ex
 
     if state.is_pbkdf2:
         challenge_response = calculate_pbkdf2_response(state.challenge, password)
@@ -46,9 +48,13 @@ def get_sid(box_url: str, username: str, password: str) -> str:
     try:
         sid = send_response(box_url, username, challenge_response)
     except Exception as ex:
-        raise Exception("failed to login") from ex
+        raise Exception(  # pylint: disable=broad-exception-raised
+            "failed to login"
+        ) from ex
     if sid == "0000000000000000":
-        raise Exception("wrong username or password")
+        raise Exception(  # pylint: disable=broad-exception-raised
+            "wrong username or password"
+        )
     return sid
 
 
