@@ -21,7 +21,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-from wireshark_remote import splituser, build_filter_expression
+from wireshark_remote.cli import splituser, build_filter_expression
 
 
 def test_splituser():

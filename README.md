@@ -1,5 +1,5 @@
-[![Build Status](https://github.com/fetzerch/wireshark_remote/actions/workflows/check.yml/badge.svg)](https://github.com/fetzerch/wireshark_remote/actions/workflows/check.yml)
-[![Coverage Status](https://coveralls.io/repos/github/fetzerch/wireshark_remote/badge.svg)](https://coveralls.io/github/fetzerch/wireshark_remote)
+[![GitHub Actions CI Status](https://github.com/fetzerch/wireshark_remote/actions/workflows/check.yml/badge.svg?event=push&branch=master)](https://github.com/fetzerch/wireshark_remote/actions)
+[![codecov Status](https://codecov.io/github/fetzerch/wireshark_remote/graph/badge.svg?token=35CQXBVD85)](https://codecov.io/github/fetzerch/wireshark_remote)
 [![PyPI Version](https://img.shields.io/pypi/v/wireshark_remote.svg)](https://pypi.org/project/wireshark_remote)
 
 # wireshark_remote - Initiate wireshark remote capture (SSH or AVM FRITZ!Box)
