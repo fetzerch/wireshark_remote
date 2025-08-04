@@ -21,6 +21,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+import importlib.metadata
 import os
 import subprocess
 import tempfile
@@ -28,6 +29,8 @@ import tempfile
 import click
 
 from .fritzbox_web import get_sid
+
+__version__ = importlib.metadata.version("wireshark_remote")
 
 
 def splituser(host, defaultuser=None):
@@ -71,6 +74,7 @@ def run_wireshark(stdin):  # pragma: no cover
     help="The interface to capture from (default any).",
 )
 @click.option("-s", "--sudo", is_flag=True, help="Run tcpdump via sudo.")
+@click.version_option(version=__version__)
 def wireshark_ssh(host, expression, interface, sudo):  # pragma: no cover
     """Launches wireshark locally and runs tcpdump on the remote [USER@]HOST via
     SSH. An optional tcpdump filter EXPRESSION allows to prefilter the captured
@@ -106,6 +110,7 @@ def wireshark_ssh(host, expression, interface, sudo):  # pragma: no cover
 )
 @click.option("-U", "--username", required=True)
 @click.option("-P", "--password", required=True)
+@click.version_option(version=__version__)
 def wireshark_fritzbox(host, interface, username, password):  # pragma: no cover
     """Launches wireshark locally and captures from the AVM FRITZ!Box
     webinterface.
